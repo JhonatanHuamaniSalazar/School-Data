@@ -1,0 +1,9 @@
+La primera query te permite mostrar los datos del estudiante con respecto
+a un DNI proporcionado por el padre de familia que desea saber si su hijo
+obtuvo una nota mayor a 19 para ver el desempeño de su hijo.
+
+select  FirstName, DNI, ClassID, Score, SubjectName from student s 
+JOIN Grades g on g.GradesId = s.StudentId
+Join Subject sb on sb.SubjectId=s.StudentId
+WHERE DNI='98267612' and Score >19;
+Group by g.GradeName, sb.SubjectId;
